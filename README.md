@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# User Amdinistrator Application Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+- **Display Users**: All Users are displayed in UserList component using MUI table.
+- **Delete Users**: Users can be deleted by clicking the delete button in their row inside the table.
+- **Add Users**: Users are added by using UserForm component utilizing MUI form. All the feilds are mandatory. Email is being validated as valid.
 
-In the project directory, you can run:
+## Installation
 
-### `yarn start`
+To run the application locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone this repository to your local machine:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   git clone https://github.com/Sapir2167/user-administrator-client.git
 
-### `yarn test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   cd user-administrator-client
 
-### `yarn build`
+3. Install dependencies using npm:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once you've installed the dependencies, you can start the development server:
 
-### `yarn eject`
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Configuration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application can be configured via environment variables. Create a `.env` file in the root directory of the project and add the following variables:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+REACT_APP_API_URL=http://localhost:3000/api
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deployment
 
-## Learn More
+To deploy the application to production, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Build the production-ready bundle:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   npm run build
 
-### Code Splitting
+2. Deploy the contents of the `build` directory to your web server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Features for future development
 
-### Analyzing the Bundle Size
+**Security**: Passwords are not being send back to the client. In the DB there are stored hashed as extra security measure.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Enhance User Experience**: Display Users more efficiently - Users will be displayed in optimized way, rendering to the DOM under usersList only the part of the users array that can fit in the view port. In order ro enhance client performance.
+  Add designed success/error/info/warning notifications in a unite unility to be served in the entire application. We can think about adding pagination, or adding a max height for the users table and do the scroll mechanism I described earlier.
 
-### Making a Progressive Web App
+  **Generic Development (hooks)**: More effectice rror handeling, raise relevant error for each usecase as detailed as possible for better user experience. Costomise own hooks such useFetch to wrap communication with the server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Testings**: Add unit testing for components, functions using Jest. Add integration testings, snapshot testings, accessability testings, performanc testings and E2E testings using cypress.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Desing**: A better design for the app is creating a seperate page for each functionality. With additional routing we can add a menu for our app and each logic part of the application sits seperatly. I united them here for simplicity.
