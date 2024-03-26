@@ -28,12 +28,6 @@ Once you've installed the dependencies, you can start the development server:
 
 npm start
 
-## Configuration
-
-The application can be configured via environment variables. Create a `.env` file in the root directory of the project and add the following variables:
-
-REACT_APP_API_URL=http://localhost:3000/api
-
 ## Deployment
 
 To deploy the application to production, follow these steps:
